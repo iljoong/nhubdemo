@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h2 Push Message (template)
+                
+    form(name="pushMsg" action="/push" method="post")
+        label Push Message (Template)
+        div.input-group
+            span.input-group-addon(id="basic-addon1")
+                span.glyphicon.glyphicon-envelope
+            textarea.form-control(row=7 name="message" id="message" placeholder="Message")
+        div.input-group
+            span.input-group-addon(id="basic-addon2")
+                span.glyphicon.glyphicon-blackboard
+            input.form-control(type="text" name="tag" id="tag" placeholder="Tag (optional)") 
+        br
+        input(type="submit", id="push")
+    p Example 
+    pre { "message": "Test Message" }

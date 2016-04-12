@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h2 Edit Tag by InstallationId
+    p InstallationId #{title}
+    if tags
+        table.table.table-striped
+            tr
+                th Tags
+                th Action
+            each tag in tags
+                tr
+                    td #{tag}
+                    td
+                        button(type='button' onclick="delTag('#{tag}', '/tag/#{title}/#{tag}')") Delete
+                
+    form(name="addTag" action="/tag" method="post")
+        label Add Tag
+        div.input-group
+            span.input-group-addon(id="basic-addon1")
+                span.glyphicon.glyphicon-blackboard
+            input.form-control(type="text" name="iid" id="iid" value="#{title}")     
+
+        div.input-group
+            span.input-group-addon(id="basic-addon2")
+                span.glyphicon.glyphicon-envelope
+            textarea.form-control(row=7 name="tag" id="tag" placeholder="tag")
+        br
+        input(type="submit", id="tag")
+        
+    

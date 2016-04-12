@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h2 Registration List
+
+    table.table.table-striped
+        tr
+            th Platform
+            th RegistrationId
+            th Template
+            th Action
+        each entry in entries
+            tr
+                //- entries
+                if entry.GcmRegistrationId
+                    td GCM
+                else if entry.ChannelUri
+                    td WNS
+                td
+                    a(href="/reg/#{entry.RegistrationId}") #{entry.RegistrationId}
+                if entry._.ContentRootElement == "WindowsTemplateRegistrationDescription" || entry._.ContentRootElement == "GcmTemplateRegistrationDescription"
+                    td Template
+                else
+                    td No
+                td
+                    button(type='button' onclick="setTag( '#{entry.Tags}' )") Edit Tag
+                    button(type='button' onclick="setTemplate( '#{entry.Tags}' )") Edit Tmp 
+                    //- button(type='button' onclick="delReg( '#{entry.RegistrationId}', '/del/#{entry.RegistrationId}' )") Remove           
+
+
+                

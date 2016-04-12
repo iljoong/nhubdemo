@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        title NHub Demo
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+        script(type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js')
+        script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+        script(type='text/javascript' src='/javascripts/myutils.js')
+    body
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            div.container
+                div.navbar-header
+                    button.navbar-toggle.collapsed(type="button" data-toggle="collapse", data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    div.navbar-brand NHub Demo
+                div.navbar-collapse.collapse(id="navbar" aria-expanded="false")
+                    ul.nav.navbar-nav
+                        li(id='nav_home')
+                            a(href='/home') HOME
+                        li(id='nav_push')
+                            a(href='/push') Push
+                        li(id='nav_config')
+                            a(href='/config') Config
+                        li(id='nav_about')
+                            a(href='/about') About
+            
+        block content
+        
+        br 
+        br
+        h6.text-center Powered by 
+            a(href='https://azure.microsoft.com') Microsoft Azure

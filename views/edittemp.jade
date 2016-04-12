@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h2 Edit Template by InstallationId
+    p InstallationId: #{iid}
+
+    if data.templates
+        h4 Templates
+        pre #{data.templates.template.body}
+        p
+            button(type='button' onclick="delTemp('template', '/temp/#{iid}/template')") Delete
+                
+    form(name="addTag" action="/temp" method="post")
+        label Add/Edit Template
+        input.form-control(type="hidden" name="iid" id="iid" value="#{iid}" )     
+        input.form-control(type="hidden" name="pushch" id="pushch" value="#{data.pushChannel}")    
+        input.form-control(type="hidden" name="platform" id="platform" value="#{data.platform}")               
+        div.input-group
+            span.input-group-addon(id="basic-addon1")
+                span.glyphicon.glyphicon-envelope
+            textarea.form-control(row=7 name="temp" id="temp" placeholder="template")
+        br
+        input(type="submit", id="temp")
+    p    
+    h4 WNS Example
+    pre &lt;toast&gt;&lt;visual&gt;&lt;binding template=&quot;ToastText01&quot; &gt;&lt;text id=&quot;1&quot; &gt;{&apos;Hi, &apos; + $&#40;message&#41;}&lt;/text&gt;&lt;/binding&gt;&lt;/visual&gt;&lt;/toast&gt;
+    h4 GCM Example
+    pre {&quot;data&quot;:{&quot;message&quot;: &quot;{&apos;Hi, &apos; + $&#40;message&#41;}&quot; }}
+        
