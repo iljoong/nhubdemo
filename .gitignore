@@ -29,7 +29,6 @@ node_modules
 # app settings
 app.settings
 .config.js
-appenv.bat
 reglist*
 HISTORY.md
 
