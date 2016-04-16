@@ -14,6 +14,7 @@ Node.js 모듈로 제공되는 [`azure-mobile-app`](https://www.npmjs.com/packag
     * 태그 추가/삭제
     * 템플릿 추가/삭제
 4. 템플릿/태그로 푸쉬 전송
+5. 텔리메트리 정보 확인
 
 ##로컬 테스트
 * `$ CMD` 실행

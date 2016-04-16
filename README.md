@@ -2,7 +2,7 @@
 [한글](/README_kr.md)
 
 NHub Demo app demonstrates how to use Azure Notification Hub to send a push with tags and template.
-It leverage [`azure-mobile-app`](https://www.npmjs.com/package/azure-mobile-apps) node.js module and its undocumented features to simplify backend programming.
+It leverages [`azure-mobile-app`](https://www.npmjs.com/package/azure-mobile-apps) node.js module and its undocumented features to simplify backend programming.
 That is, No SAS token generation and No complex REST API coding is needed.
 
 [![Watch NHubDemo](https://img.youtube.com/vi/qaDy-E1eKkM/0.jpg)](https://youtu.be/qaDy-E1eKkM)
@@ -14,6 +14,7 @@ That is, No SAS token generation and No complex REST API coding is needed.
     * Add/Remove tag
     * Add/Remove Template
 4. Send a push using Template & tag
+5. Get telemetry info
 
 ##Local Test
 * Launch `$ CMD`
