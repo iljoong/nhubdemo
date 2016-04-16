@@ -200,16 +200,35 @@ router.get('/push', function(req, res, next) {
 router.post('/push', function(req, res, next) {
     var tag = req.body.tag;
     var message = req.body.message;
-    
+       
     req.azureMobile.push.send(tag, message, null, function(err, response) {
         if (!err) {
             
-            //res.redirect("/push");  
-            res.render('log', {title: "Push Result", content: JSON.stringify(response.headers, null, 2)});      
+            var tid = response.headers.location.replace(/https:\/\/.*\/messages\//gi, "");
+            
+            res.redirect('/pushres/' + tid);    
         }             
     });
     
 });
+
+router.get('/pushres/:tid', function(req, res, next) {
+    
+    var tid = req.params.tid;
+    
+    var push = req.azureMobile.push;
+    var webResource = WebResource.get(push.hubName + "/messages/" + tid);
+    push._executeRequest(webResource, null, null, null, function (err, result) {
+    
+        if (err) {
+            console.log(err2);
+            res.render('log', { title: "push result error", content: err });
+        } else {
+            res.render('tele', { title: "Telemetry", tid: tid, content: JSON.stringify(result.body, null, 2) });
+        }
+    });         
+
+}); 
 
 router.get('/about', function(req, res, next) {
     res.render('about');

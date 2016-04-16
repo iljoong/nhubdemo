@@ -1,4 +1,4 @@
-// bolier plate class for request using InstallationId
+// result handler for request using InstallationId
 exports.serialize = function (type, resource, properties) {
   var content = {};
 
