@@ -5,7 +5,7 @@ NHub Demo app demonstrates how to use Azure Notification Hub to send a push with
 It leverages [`azure-mobile-app`](https://www.npmjs.com/package/azure-mobile-apps) node.js module and its undocumented features to simplify backend programming.
 That is, No SAS token generation and No complex REST API coding is needed.
 
-[![Watch NHubDemo](https://img.youtube.com/vi/qaDy-E1eKkM/0.jpg)](https://youtu.be/qaDy-E1eKkM)
+[![Watch NHubDemo](https://img.youtube.com/vi/one4LxEUAQU/0.jpg)](https://youtu.be/one4LxEUAQU)
 
 ##FEATURE
 1. View all devices' registration (with RegistrationId)

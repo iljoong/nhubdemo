@@ -5,7 +5,7 @@ NHub Demo 앱은 Azure Notification Hub의 태그와 템플릿을 이용하여 �
 Node.js 모듈로 제공되는 [`azure-mobile-app`](https://www.npmjs.com/package/azure-mobile-apps)의 숨겨진 기능을 이용하여 간편한 백앤드 프로그래밍을 구현합니다.
 즉, SAS 토근 생성 및 복잡한 REST API 코딩이 요구되지 않습니다.
 
-[![Watch NHubDemo](https://img.youtube.com/vi/qaDy-E1eKkM/0.jpg)](https://youtu.be/qaDy-E1eKkM)
+[![Watch NHubDemo](https://img.youtube.com/vi/one4LxEUAQU/0.jpg)](https://youtu.be/one4LxEUAQU)
 
 ##기능
 1. 모든 디바이스의 등록 확인 (with RegistrationId)
