@@ -125,24 +125,21 @@ router.post('/temp', function(req, res, next) {
     var platform = req.body.platform;
     var template = req.body.temp;
 
-    var body = {
-        installationId: iid, 
-        platform: platform, 
-        pushChannel: pushch, 
-        templates: { 
-            template : {
-                body : template
-                } 
-            }
-        };
+    var _value = { body: template };
     if (platform == 'wns') {
-        body.templates.template.headers = { "X-WNS-Type": "wns/toast" };
+        _value.headers = { "X-WNS-Type": "wns/toast" };
     }
-
+        
+    var _payload = [{
+        op: "add", 
+        path: "/templates/template", 
+        value: JSON.stringify(_value)
+    }];
+   
     var push = req.azureMobile.push;
-    var webResource = WebResource.put(push.hubName + '/installations/' + iid);
+    var webResource = WebResource.patch(push.hubName + '/installations/' + iid);
     webResource.rawResponse = true;
-    var payload = JSON.stringify(body);    
+    var payload = JSON.stringify(_payload);
 
     push._executeRequest(webResource, payload, InstallationResult, null, function (err, response) {
         
@@ -154,7 +151,6 @@ router.post('/temp', function(req, res, next) {
         }        
     });
 });
-
 
 // REMOVE TEMPLATE
 router.get('/temp/:id/:tempname', function(req, res, next) {
